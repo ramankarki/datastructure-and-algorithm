@@ -12,6 +12,7 @@ class Trie {
     this.root = new Node();
   }
 
+  // inserts words recursively
   insertRecur(word, root = this.root) {
     if (!word.length) return;
     let letter = word[0];
@@ -27,6 +28,7 @@ class Trie {
     this.insertRecur(word.slice(1), root.children[letter]);
   }
 
+  // inserts words iteratively
   insertIter(word) {
     let letterIdx = 0;
     let node = this.root;
@@ -47,6 +49,7 @@ class Trie {
     }
   }
 
+  // searches if word exist in Trie recursively
   searchRecur(word, root = this.root) {
     if (word.length === 0) {
       if (root.isTerminal) return true;
@@ -60,6 +63,7 @@ class Trie {
     return false;
   }
 
+  // searches if word exist in Trie iteratively
   searchIter(word) {
     let letterIdx = 0;
     let node = this.root;
@@ -81,6 +85,7 @@ class Trie {
     return true;
   }
 
+  // returns words in array that matches with given prefix
   wordsWithPrefix(prefix, root = this.root) {
     if (!prefix.length) {
       let allWords = [];
