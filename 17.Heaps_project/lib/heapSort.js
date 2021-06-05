@@ -19,10 +19,12 @@ function shiftDown(array, idx, endOfHeap) {
 }
 
 function heapSort(array) {
+  // heapify
   for (let i = array.length - 1; i >= 0; i--) {
     shiftDown(array, i, array.length);
   }
 
+  // mutate original heap array and sort
   for (let endOfHeap = array.length - 1; endOfHeap >= 0; endOfHeap--) {
     swap(array, 0, endOfHeap);
     shiftDown(array, 0, endOfHeap);
