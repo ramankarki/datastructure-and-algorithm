@@ -1,3 +1,4 @@
+// Bit manipulation question
 function singleNumber(nums) {
   let result = 0;
   for (let n of nums) {
